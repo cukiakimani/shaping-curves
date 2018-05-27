@@ -48,6 +48,16 @@ public class SpawnCylinders : MonoBehaviour
         {
             _animTimer = 0f;
         }
+
+
+        var view = Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        var isOutside = view.x < 0 || view.x > 1 || view.y < 0 || view.y > 1;
+        if (!isOutside)
+        {
+            float y = Map(view.x, 0f, 1f, -45, 45);
+            float x = Map(view.y, 0f, 1f, -45, 45);
+            transform.rotation = Quaternion.Euler(x, y, 0f);
+        }
     }
 
     float Map(float value, float initialMin, float initialMax, float destinationMin, float destinationMax)
