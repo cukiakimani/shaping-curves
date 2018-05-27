@@ -26,4 +26,9 @@ public class InstanceShaderController : MonoBehaviour
     {
         _meshRenderer.material.SetFloat("_TimeScale", scale);
     }
+
+    public void SetRadiusScale(float scale)
+    {
+        _meshRenderer.material.SetFloat("_RadiusScale", scale);
+    }
 }

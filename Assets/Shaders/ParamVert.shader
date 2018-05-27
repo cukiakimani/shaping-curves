@@ -8,6 +8,7 @@
 		_MeshIndex ("Mesh Index", Int) = 1
 		_TotalMeshes ("Total Meshes", Int) = 1
 		_TimeScale ("Time Scale", Range(1.0, 25.0)) = 5
+		_RadiusScale ("Radius Scale", Range(1.0, 5.0)) = 1
 
 	}
 
@@ -41,6 +42,7 @@
 			float _MeshIndex;
 			float _TotalMeshes;
 			float _TimeScale;
+			float _RadiusScale;
 
 			struct vertInput 
 			{
@@ -122,7 +124,7 @@
 				float ripple = expoInOut(sin(t * 2.0 * PI + time)) * 0.25;
   				float noise = time + index * ripple * 12.0;
 
-				float r = sin(index * 0.75 + beta * 2.0) * 0.75;
+				float r = sin(index * 0.75 + beta * 2.0) * 0.75 * _RadiusScale;
 				float theta = 4.0 * beta + index * 0.25;
 				float phi = sin(index * 2.0 + beta * 8.0 + noise);
 
