@@ -1,0 +1,1 @@
+This is a Unity3D translation of [MATT DESLAURIERS](https://www.mattdesl.com/) threes.js shader, [Shaping Curves with Parametric Equations](https://mattdesl.svbtle.com/shaping-curves-with-parametric-equations)
